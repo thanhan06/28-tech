@@ -28,7 +28,7 @@ if(buttonStatus.length>0){
  if(formSearch){
     let url = new URL(window.location.href); // lấy url hiện tại và NEW để sửa được url
 
-    console.log(formSearch)
+    // console.log(formSearch)
     formSearch.addEventListener("submit",(e)=>{
         e.preventDefault(); // chặn load lại trang khi submit
         const keyword =e.target.elements.keyword.value
@@ -41,3 +41,18 @@ if(buttonStatus.length>0){
         window.location.href = url.href;
     });
  }
+ // End Form  Search
+
+ // Pagination
+const buttonPagination = document.querySelectorAll("[button-pagination]");
+if(buttonPagination){
+    let url = new URL(window.location.href);
+    buttonPagination.forEach(button=>{
+        button.addEventListener("click",()=>{
+            const page=button.getAttribute("button-pagination");
+            url.searchParams.set("page",page);
+            window.location.href = url.href;
+        })  
+    })
+}
+ // End Pagination
