@@ -11,6 +11,11 @@ if(buttonStatus.length>0){
             const status = button.getAttribute("button-status");
             
             if(status){
+                const curentStatus=url.searchParams.get("status");
+                if(curentStatus !=  status){
+                    url.searchParams.set("page",1); // Khi chọn trạng thái khác thì quay về trang 1
+                }
+
                 url.searchParams.set("status",status);  //phần sau dấu hỏi nta gọi là params
             } else {
                 url.searchParams.delete("status");
