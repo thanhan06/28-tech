@@ -1,9 +1,11 @@
 /*Header*/
+
 .header{
     background-color: #202020;
     padding: 10px 0;
     top:0;
     z-index:999;
+
 }
 
 .header .inner-logo a{
@@ -35,6 +37,7 @@
 /*End Body*/
 
 /*Sider*/
+
 .sider .inner-menu ul{
     list-style: none;
     padding:0;

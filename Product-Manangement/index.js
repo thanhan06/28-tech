@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require('body-parser')
 const methodOverride = require('method-override');
 require("dotenv").config();
 
@@ -10,6 +11,8 @@ const route = require("./routes/client/index.route");
 const systemConfig = require("./config/system")
 database.connect();
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false })); //  support encoded bodies
+
 app.use(methodOverride('_method'))
 const port=process.env.PORT;
 
